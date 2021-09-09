@@ -1,0 +1,268 @@
+2021-09-08 16:02:55,193 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 1892 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 16:02:55,204 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 16:02:56,196 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 16:02:56,227 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 24ms. Found 0 repository interfaces.
+2021-09-08 16:02:56,922 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 16:02:56,940 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:02:56,950 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 16:02:56,951 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 16:02:56,959 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 16:02:57,157 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 16:02:57,158 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 1861 ms
+2021-09-08 16:02:57,823 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 16:02:57,904 [INFO ] cluster-ClusterId{value='61386e31440441076410f1f4', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:30}] to localhost:27017
+2021-09-08 16:02:57,908 [INFO ] cluster-ClusterId{value='61386e31440441076410f1f4', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1504240}
+2021-09-08 16:02:58,507 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 16:02:58,705 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 16:02:58,761 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:02:58,797 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 16:02:58,802 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 4.982 seconds (JVM running for 6.421)
+2021-09-08 16:04:12,782 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 3048 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 16:04:12,791 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 16:04:13,719 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 16:04:13,747 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2021-09-08 16:04:14,381 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 16:04:14,398 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:04:14,408 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 16:04:14,408 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 16:04:14,416 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 16:04:14,596 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 16:04:14,596 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 1732 ms
+2021-09-08 16:04:15,164 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 16:04:15,237 [INFO ] cluster-ClusterId{value='61386e7f4404410be85302c7', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:31}] to localhost:27017
+2021-09-08 16:04:15,240 [INFO ] cluster-ClusterId{value='61386e7f4404410be85302c7', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1315389}
+2021-09-08 16:04:15,787 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 16:04:15,977 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 16:04:16,040 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:04:16,078 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 16:04:16,082 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 4.428 seconds (JVM running for 5.758)
+2021-09-08 16:04:35,726 [INFO ] http-nio-9001-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 16:04:35,727 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 524] Initializing Servlet 'dispatcherServlet'
+2021-09-08 16:04:35,737 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 546] Completed initialization in 10 ms
+2021-09-08 16:04:35,865 [INFO ] http-nio-9001-exec-1 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:2, serverValue:32}] to localhost:27017
+2021-09-08 16:09:51,415 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 7620 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 16:09:51,424 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 16:09:52,308 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 16:09:52,345 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2021-09-08 16:09:53,045 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 16:09:53,061 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:09:53,071 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 16:09:53,072 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 16:09:53,079 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 16:09:53,221 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 16:09:53,221 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 1722 ms
+2021-09-08 16:09:53,811 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 16:09:53,905 [INFO ] cluster-ClusterId{value='61386fd14404411dc44b019d', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:33}] to localhost:27017
+2021-09-08 16:09:53,908 [INFO ] cluster-ClusterId{value='61386fd14404411dc44b019d', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1431984}
+2021-09-08 16:09:54,451 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 16:09:54,603 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 16:09:54,648 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:09:54,682 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 16:09:54,686 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 4.643 seconds (JVM running for 6.014)
+2021-09-08 16:10:24,473 [INFO ] http-nio-9001-exec-2 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 16:10:24,474 [INFO ] http-nio-9001-exec-2 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 524] Initializing Servlet 'dispatcherServlet'
+2021-09-08 16:10:24,481 [INFO ] http-nio-9001-exec-2 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 546] Completed initialization in 7 ms
+2021-09-08 16:10:38,313 [INFO ] http-nio-9001-exec-2 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:2, serverValue:34}] to localhost:27017
+2021-09-08 16:15:06,884 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 3336 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 16:15:06,890 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 16:15:08,102 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 16:15:08,143 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2021-09-08 16:15:08,951 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 16:15:08,980 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:15:08,995 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 16:15:08,995 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 16:15:09,005 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 16:15:09,200 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 16:15:09,201 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 2173 ms
+2021-09-08 16:15:09,838 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 16:15:09,924 [INFO ] cluster-ClusterId{value='6138710d4404410d080eba91', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:35}] to localhost:27017
+2021-09-08 16:15:09,928 [INFO ] cluster-ClusterId{value='6138710d4404410d080eba91', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1789570}
+2021-09-08 16:15:10,556 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 16:15:10,738 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 16:15:10,792 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:15:10,828 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 16:15:10,833 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 5.377 seconds (JVM running for 6.897)
+2021-09-08 16:15:20,478 [INFO ] http-nio-9001-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 16:15:20,479 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 524] Initializing Servlet 'dispatcherServlet'
+2021-09-08 16:15:20,488 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 546] Completed initialization in 9 ms
+2021-09-08 16:15:20,654 [INFO ] http-nio-9001-exec-1 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:2, serverValue:36}] to localhost:27017
+2021-09-08 16:38:09,927 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 4116 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 16:38:09,931 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 16:38:10,586 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 16:38:10,614 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 21ms. Found 0 repository interfaces.
+2021-09-08 16:38:11,280 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 16:38:11,297 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:38:11,306 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 16:38:11,306 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 16:38:11,314 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 16:38:11,506 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 16:38:11,507 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 1526 ms
+2021-09-08 16:38:12,062 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 16:38:12,139 [INFO ] cluster-ClusterId{value='61387674440441101483af81', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:39}] to localhost:27017
+2021-09-08 16:38:12,142 [INFO ] cluster-ClusterId{value='61387674440441101483af81', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1383130}
+2021-09-08 16:38:12,687 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 16:38:12,842 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 16:38:12,888 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 16:38:12,924 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 16:38:12,927 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 4.549 seconds (JVM running for 6.382)
+2021-09-08 16:38:21,254 [INFO ] http-nio-9001-exec-2 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 16:38:21,254 [INFO ] http-nio-9001-exec-2 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 524] Initializing Servlet 'dispatcherServlet'
+2021-09-08 16:38:21,263 [INFO ] http-nio-9001-exec-2 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 546] Completed initialization in 9 ms
+2021-09-08 16:38:21,458 [INFO ] http-nio-9001-exec-2 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
+2021-09-08 17:40:26,816 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 50] Starting StockUpUpApplication on Lenovo-PC with PID 4384 (G:\work\stockupup\target\classes started by jianglinle in G:\work\stockupup)
+2021-09-08 17:40:26,822 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2021-09-08 17:40:27,892 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-09-08 17:40:27,927 [INFO ] main o.s.data.repository.config.RepositoryConfigurationDelegate
+                [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2021-09-08 17:40:28,707 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 90] Tomcat initialized with port(s): 9001 (http)
+2021-09-08 17:40:28,728 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9001"]
+2021-09-08 17:40:28,741 [INFO ] main org.apache.catalina.core.StandardService
+                [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-09-08 17:40:28,741 [INFO ] main org.apache.catalina.core.StandardEngine
+                [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.16]
+2021-09-08 17:40:28,753 [INFO ] main org.apache.catalina.core.AprLifecycleListener
+                [DirectJDKLog.java : 173] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [F:\java\jdk1.8.0_31\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\gtk\bin;F:\java\jdk1.8.0_31\bin;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;F:\mysql\mysql-5.7.12-winx64\bin;F:\Apache Software Foundation\apache-maven-3.3.9\bin;F:\Lenovo Home\DCMainWin.exe;D:\SVN\server\bin;F:\Git\cmd;F:\Python27;;.]
+2021-09-08 17:40:28,993 [INFO ] main o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-09-08 17:40:28,994 [INFO ] main org.springframework.web.context.ContextLoader
+                [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 2071 ms
+2021-09-08 17:40:29,689 [INFO ] main org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2021-09-08 17:40:29,790 [INFO ] cluster-ClusterId{value='6138850d440441112062318c', description='null'}-localhost:27017 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:1, serverValue:45}] to localhost:27017
+2021-09-08 17:40:29,793 [INFO ] cluster-ClusterId{value='6138850d440441112062318c', description='null'}-localhost:27017 org.mongodb.driver.cluster
+                [SLF4JLogger.java : 71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 15]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1691038}
+2021-09-08 17:40:30,481 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskExecutor
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-08 17:40:30,734 [INFO ] main o.s.scheduling.concurrent.ThreadPoolTaskScheduler
+                [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'taskScheduler'
+2021-09-08 17:40:30,799 [INFO ] main org.apache.coyote.http11.Http11NioProtocol
+                [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9001"]
+2021-09-08 17:40:30,838 [INFO ] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer
+                [TomcatWebServer.java : 204] Tomcat started on port(s): 9001 (http) with context path '/api'
+2021-09-08 17:40:30,843 [INFO ] main com.xxxz.stockupup.StockUpUpApplication
+                [StartupInfoLogger.java : 59] Started StockUpUpApplication in 5.328 seconds (JVM running for 7.011)
+2021-09-08 17:40:38,676 [INFO ] http-nio-9001-exec-1 o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/api]
+                [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-08 17:40:38,677 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 524] Initializing Servlet 'dispatcherServlet'
+2021-09-08 17:40:38,685 [INFO ] http-nio-9001-exec-1 org.springframework.web.servlet.DispatcherServlet
+                [FrameworkServlet.java : 546] Completed initialization in 8 ms
+2021-09-08 17:40:38,846 [INFO ] http-nio-9001-exec-1 org.mongodb.driver.connection
+                [SLF4JLogger.java : 71] Opened connection [connectionId{localValue:2, serverValue:46}] to localhost:27017
