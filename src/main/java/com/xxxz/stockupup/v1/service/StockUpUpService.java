@@ -145,7 +145,7 @@ public class StockUpUpService {
     }
 
     /**
-     * 获取根据状态获取持仓股票
+     * 根据状态获取持仓股票
      */
     public List<Stock> getStockByStatus(int status) {
         return mongoTemplate.find(
