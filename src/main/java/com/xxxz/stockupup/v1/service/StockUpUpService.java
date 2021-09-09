@@ -59,9 +59,6 @@ public class StockUpUpService {
             stock.setModify_ts(stock.getCreate_ts());
             mongoTemplate.save(stock);
         }
-
-        //更新今日收益
-        stockTask.updateTodayProfit();
     }
 
     /**
@@ -79,9 +76,6 @@ public class StockUpUpService {
                 .set("trans", 0)
                 .set("status", 0);
         mongoTemplate.updateFirst(query, update, Stock.class);
-
-        //更新今日收益
-        stockTask.updateTodayProfit();
     }
 
     /**
