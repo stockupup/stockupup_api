@@ -2,7 +2,7 @@
 1.mvn clean  
 2.mvn package
 
-启动命令（start.sh)  
+启动脚本（start.sh)  
 #!/bin/bash  
 PROJECTNAME=stockupup_api  
 pid=`ps -ef |grep $PROJECTNAME |grep -v "grep" |awk '{print $2}'`  
@@ -17,7 +17,7 @@ else
 fi
 
 
-停止命令(stop.sh)  
+停止脚本(stop.sh)  
 #!/bin/bash  
 PROJECTNAME=stockupup_api  
 pid=`ps -ef | grep $PROJECTNAME |grep -v "grep" |awk '{print $2}'`  
