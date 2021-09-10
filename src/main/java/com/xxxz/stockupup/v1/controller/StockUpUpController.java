@@ -5,6 +5,9 @@ import com.xxxz.stockupup.v1.model.Stock;
 import com.xxxz.stockupup.v1.service.StockUpUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -51,5 +54,21 @@ public class StockUpUpController {
     @GetMapping("/query")
     public Map query(@RequestParam(required = false) String holder_id) {
         return stockUpUpService.query(holder_id);
+    }
+
+    /**
+     * 手动更新昨日收益和持仓收益
+     */
+    @PostMapping("/updateYesterdayAndNowProfit")
+    public String updateYesterdayAndNowProfit(@RequestBody Stock paramStock) {
+        Query query = new Query(
+                Criteria.where("holder_name").is(paramStock.getHolder_name())
+                        .and("stock_name").is(paramStock.getStock_name())
+                        .and("status").is(1)
+        );
+        Update update = new Update().set("total_profit", paramStock.getTotal_profit())
+                .set("yesterday_profit", paramStock.getYesterday_profit());
+        mongoTemplate.updateFirst(query, update, Stock.class);
+        return "update success " + paramStock.toString();
     }
 }
