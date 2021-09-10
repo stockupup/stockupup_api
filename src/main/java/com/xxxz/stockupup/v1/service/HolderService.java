@@ -39,13 +39,6 @@ public class HolderService {
     }
 
     /**
-     * 根据id查询用户名
-     */
-    public String getNameByHolderId(String holderId) {
-        return getHolderById(holderId).getHolder_name();
-    }
-
-    /**
      * 根据id查询实体
      */
     public Holder getHolderById(String holderId) {

@@ -137,17 +137,6 @@ public class StockUpUpService {
     }
 
     /**
-     * 根据holder_id和状态获取持仓股票
-     */
-    public List<Stock> getStockByHolder_nameAndStatus(String holder_name, int status) {
-        return mongoTemplate.find(
-                new Query(Criteria.where("holder_name").is(holder_name)
-                        .and("status").is(status)),
-                Stock.class
-        );
-    }
-
-    /**
      * 根据状态获取持仓股票
      */
     public List<Stock> getStockByStatus(int status) {
@@ -171,12 +160,11 @@ public class StockUpUpService {
     /**
      * 获取昨日清仓的股票
      */
-    public List<Stock> getYesterdayClearStock() {
+    private List<Stock> getYesterdayClearStock() {
         return mongoTemplate.find(
                 new Query(Criteria.where("status").is(0)
                         .and("modify_ts").gt(DateUtil.getYesterdayTs())),
                 Stock.class
         );
     }
-
 }
