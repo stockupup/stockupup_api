@@ -9,8 +9,6 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
 /**
  * @autor jiangll
  * @date 2021/9/8
