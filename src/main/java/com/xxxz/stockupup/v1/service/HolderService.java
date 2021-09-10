@@ -42,10 +42,13 @@ public class HolderService {
      * 根据id查询用户名
      */
     public String getNameByHolderId(String holderId) {
-        Query query = new Query(
-                Criteria.where("holder_id").is(holderId)
-        );
-        Holder holder = mongoTemplate.findOne(query, Holder.class);
-        return holder.getHolder_name();
+        return getHolderById(holderId).getHolder_name();
+    }
+
+    /**
+     * 根据id查询实体
+     */
+    public Holder getHolderById(String holderId) {
+        return mongoTemplate.findOne(new Query(Criteria.where("holder_id").is(holderId)), Holder.class);
     }
 }

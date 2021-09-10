@@ -22,6 +22,8 @@ public class Holder implements Serializable {
     private Date create_time;
     private Long create_ts;
 
+    private Double history_profit = 0.00; //历史收益
+
 
     public Holder(String holder_name) {
         this.holder_name = holder_name;

@@ -1,6 +1,5 @@
 package com.xxxz.stockupup.v1.service;
 
-import com.xxxz.stockupup.v1.component.StockTask;
 import com.xxxz.stockupup.v1.model.Holder;
 import com.xxxz.stockupup.v1.model.HolderStock;
 import com.xxxz.stockupup.v1.model.Stock;
@@ -27,8 +26,6 @@ public class StockUpUpService {
     MongoTemplate mongoTemplate;
     @Autowired
     HolderService holderService;
-    @Autowired
-    StockTask stockTask;
 
     /**
      * 更新持仓数据
@@ -111,6 +108,7 @@ public class StockUpUpService {
      * 将个人持股情况整合成持仓情况
      */
     private HolderStock transStocks(String holder_id, String holder_name) {
+        Holder holder = holderService.getHolderById(holder_id);
         List<Stock> stocks_all = mongoTemplate.find(
                 new Query(Criteria.where("holder_id").is(holder_id)
                 ), Stock.class);
@@ -125,10 +123,10 @@ public class StockUpUpService {
                 .collect(Collectors.toList());
         HolderStock holderStock = new HolderStock();
         holderStock.setHolder_id(holder_id);
-        holderStock.setHolder_name(StringUtils.isBlank(holder_name) ? holderService.getNameByHolderId(holder_id) : holder_name);
+        holderStock.setHolder_name(StringUtils.isBlank(holder_name) ? holder.getHolder_name() : holder_name);
         holderStock.setStocks(stocks_1);
         holderStock.setClearance_profit(NumberUtil.retainTwo(stocks_0.stream().mapToDouble(Stock::getClearance_profit).sum()));
-        holderStock.setTotal_profit(NumberUtil.retainTwo(stocks_all.stream().mapToDouble(Stock::getTotal_profit).sum()));
+        holderStock.setTotal_profit(NumberUtil.retainTwo(holder.getHistory_profit() + stocks_all.stream().mapToDouble(Stock::getTotal_profit).sum()));
         holderStock.setYesterday_profit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getYesterday_profit).sum()
                 + stocks_0_y.stream().mapToDouble(Stock::getYesterday_profit).sum()));
         holderStock.setProfit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getTotal_profit).sum()
@@ -136,6 +134,17 @@ public class StockUpUpService {
         //由于前端将total_profit当作昨日累计收益使用，所以这样赋值
         holderStock.setTotal_profit(NumberUtil.retainTwo(holderStock.getTotal_profit() - holderStock.getProfit()));
         return holderStock;
+    }
+
+    /**
+     * 根据holder_id和状态获取持仓股票
+     */
+    public List<Stock> getStockByHolder_nameAndStatus(String holder_name, int status) {
+        return mongoTemplate.find(
+                new Query(Criteria.where("holder_name").is(holder_name)
+                        .and("status").is(status)),
+                Stock.class
+        );
     }
 
     /**

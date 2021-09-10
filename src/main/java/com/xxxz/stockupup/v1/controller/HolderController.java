@@ -5,6 +5,9 @@ import com.xxxz.stockupup.v1.service.HolderService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -50,6 +53,17 @@ public class HolderController {
         result.put("msg", "ok");
         result.put("rid", StringUtils.isBlank(rid) ? "" : rid);
         return result;
+    }
+
+    /**
+     * 设置历史收益
+     */
+    @PostMapping("/historyProfit")
+    public String historyProfit(@RequestBody Holder holder) {
+        Query query = new Query(Criteria.where("holder_name").is(holder.getHolder_name()));
+        Update update = new Update().set("history_profit", holder.getHistory_profit());
+        mongoTemplate.updateFirst(query, update, Holder.class);
+        return "set success " + holder.getHolder_name() + holder.getHistory_profit();
     }
 
 }

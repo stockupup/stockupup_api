@@ -39,7 +39,7 @@ public class StockTask {
     /**
      * 每天12:01，15:01更新今日收益
      */
-    @Scheduled(cron = "0 1 12,15 * * ?")
+    @Scheduled(cron = "0 1 10,12,15,19,23 * * ?")
     public void updateTodayProfit() {
         log.info("-- 更新今日收益 --\n");
         List<Stock> stocks_1 = stockUpUpService.getStockByStatus(1);
@@ -103,7 +103,7 @@ public class StockTask {
     /**
      * 获取股票最新价格
      */
-    private List<Double> getPresentPriceByCodes(List<String> codes) {
+    public List<Double> getPresentPriceByCodes(List<String> codes) {
         List<Double> result = new ArrayList<>(codes.size());
         String s1 = restTemplate.getForObject(
                 "https://hq.sinajs.cn/?list=" + StringUtils.join(codes, ",")
