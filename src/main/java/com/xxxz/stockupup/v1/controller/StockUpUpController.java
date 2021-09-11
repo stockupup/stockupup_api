@@ -3,6 +3,7 @@ package com.xxxz.stockupup.v1.controller;
 import com.xxxz.stockupup.v1.component.StockTask;
 import com.xxxz.stockupup.v1.model.Stock;
 import com.xxxz.stockupup.v1.service.StockUpUpService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -70,5 +71,18 @@ public class StockUpUpController {
                 .set("yesterday_profit", paramStock.getYesterday_profit());
         mongoTemplate.updateFirst(query, update, Stock.class);
         return "update success " + paramStock.toString();
+    }
+
+    /**
+     * test entrance
+     */
+    @GetMapping("/task")
+    public Object task(@RequestParam String type) {
+        if (StringUtils.equals(type, "1")) {
+            return stockTask.updateTodayProfit();
+        } else if (StringUtils.equals(type, "2")) {
+            return stockTask.clearTodayProfit();
+        }
+        return "success";
     }
 }
