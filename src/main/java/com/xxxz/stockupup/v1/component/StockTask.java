@@ -88,23 +88,27 @@ public class StockTask {
         if (CollectionUtils.isNotEmpty(stocks_1)) {
             stocks_1.forEach(stock -> {
                 //TODO 待优化
-                Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                Update update = new Update()
-                        .set("yesterday_profit", stock.getProfit())
-                        .set("profit", 0.00)
-                        .set("yd_cost", stock.getCost());
-                mongoTemplate.updateFirst(query, update, Stock.class);
+                if (stock.getProfit() > 0) {
+                    Query query = new Query(Criteria.where("_id").is(stock.get_id()));
+                    Update update = new Update()
+                            .set("yesterday_profit", stock.getProfit())
+                            .set("profit", 0.00)
+                            .set("yd_cost", stock.getCost());
+                    mongoTemplate.updateFirst(query, update, Stock.class);
+                }
             });
         }
         List<Stock> stocks_0 = stockUpUpService.getTodayClearStock();
         if (CollectionUtils.isNotEmpty(stocks_0)) {
             stocks_0.forEach(stock -> {
                 //TODO 待优化
-                Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                Update update = new Update()
-                        .set("yesterday_profit", stock.getProfit())
-                        .set("profit", 0.00);
-                mongoTemplate.updateFirst(query, update, Stock.class);
+                if (stock.getProfit() > 0) {
+                    Query query = new Query(Criteria.where("_id").is(stock.get_id()));
+                    Update update = new Update()
+                            .set("yesterday_profit", stock.getProfit())
+                            .set("profit", 0.00);
+                    mongoTemplate.updateFirst(query, update, Stock.class);
+                }
             });
         }
 
