@@ -4,7 +4,7 @@
 
 启动脚本（start.sh)  
 #!/bin/bash
-PROJECTNAME=stockupup_api
+PROJECTNAME=stockupup
 pid=`ps -ef |grep $PROJECTNAME |grep -v "grep" |awk '{print $2}'`
 
 if [ $pid ];then
@@ -19,7 +19,7 @@ fi
 
 停止脚本(stop.sh)  
 #!/bin/bash
-PROJECTNAME=stockupup_api
+PROJECTNAME=stockupup
 pid=`ps -ef |grep $PROJECTNAME |grep -v "grep" |awk '{print $2}'`
 if [ $pid ];then
 	echo "$PROJECTNAME is running and pid=$pid"
