@@ -68,8 +68,8 @@ public class StockUpUpService {
                         .and("status").is(1)
         );
         Update update = new Update()
-                .set("clearance_profit", stockParam.getProfit())
-                .set("total_profit", stockParam.getProfit())
+                .set("clearance_profit", null == stockParam.getProfit() ? 0.00 : stockParam.getProfit())
+                .set("total_profit", null == stockParam.getProfit() ? 0.00 : stockParam.getProfit())
                 .set("trans", 0)
                 .set("status", 0);
         mongoTemplate.updateFirst(query, update, Stock.class);
