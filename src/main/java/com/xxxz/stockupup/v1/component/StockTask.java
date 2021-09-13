@@ -54,7 +54,7 @@ public class StockTask {
                 Stock stock = stocks_1.get(i);
                 Query query = new Query(Criteria.where("_id").is(stock.get_id()));
                 Update update = new Update().set("total_profit", NumberUtil.retainTwo(stock.getTrans() * (price.get(i) - stock.getCost())))
-                        .set("profit", NumberUtil.retainTwo(stock.getTotal_profit() + stock.getClearance_profit() - stock.getYesterday_profit()));
+                                            .set("profit", NumberUtil.retainTwo(stock.getTotal_profit() + stock.getClearance_profit() - stock.getYesterday_profit()));
                 mongoTemplate.updateFirst(query, update, Stock.class);
             }
             result.put("price", StringUtils.join(",", price));
@@ -90,10 +90,9 @@ public class StockTask {
                 //TODO 待优化
                 if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                    Update update = new Update()
-                            .set("yesterday_profit", stock.getProfit())
-                            .set("profit", 0.00)
-                            .set("yd_cost", stock.getCost());
+                    Update update = new Update().set("yesterday_profit", stock.getProfit())
+                                                .set("profit", 0.00)
+                                                .set("yd_cost", stock.getCost());
                     mongoTemplate.updateFirst(query, update, Stock.class);
                 }
             });
@@ -104,9 +103,8 @@ public class StockTask {
                 //TODO 待优化
                 if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                    Update update = new Update()
-                            .set("yesterday_profit", stock.getProfit())
-                            .set("profit", 0.00);
+                    Update update = new Update().set("yesterday_profit", stock.getProfit())
+                                                .set("profit", 0.00);
                     mongoTemplate.updateFirst(query, update, Stock.class);
                 }
             });
@@ -123,9 +121,8 @@ public class StockTask {
      */
     private List<Double> getPresentPriceByCodes(List<String> codes) {
         List<Double> result = new ArrayList<>(codes.size());
-        String s1 = restTemplate.getForObject(
-                "https://hq.sinajs.cn/?list=" + StringUtils.join(codes, ",")
-                , String.class);
+        String s1 = restTemplate.getForObject("https://hq.sinajs.cn/?list=" + StringUtils.join(codes, ","),
+                                                String.class);
         String[] s2 = s1.split("\\n");
         for (String s2s : s2) {
             String[] s3 = s2s.split(",");

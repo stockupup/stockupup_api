@@ -23,9 +23,8 @@ public class HolderService {
      * 添加用户
      */
     public Holder add(Holder paramHoder) {
-        Holder holder = mongoTemplate.findOne(
-                new Query(Criteria.where("holder_name").is(paramHoder.getHolder_name())),
-                Holder.class);
+        Holder holder = mongoTemplate.findOne(new Query(Criteria.where("holder_name").is(paramHoder.getHolder_name())),
+                                                Holder.class);
         if (holder == null) {
             paramHoder.set_id(UUID.randomUUID().toString().replaceAll("-", ""));
             paramHoder.setCreate_time(new Date());

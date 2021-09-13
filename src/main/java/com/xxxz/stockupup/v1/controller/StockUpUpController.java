@@ -68,7 +68,7 @@ public class StockUpUpController {
                         .and("status").is(1)
         );
         Update update = new Update().set("total_profit", paramStock.getTotal_profit())
-                .set("yesterday_profit", paramStock.getYesterday_profit());
+                                    .set("yesterday_profit", paramStock.getYesterday_profit());
         mongoTemplate.updateFirst(query, update, Stock.class);
         return "update success " + paramStock.toString();
     }
