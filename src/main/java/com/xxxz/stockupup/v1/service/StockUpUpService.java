@@ -42,9 +42,6 @@ public class StockUpUpService {
                                         .set("trans", stockParam.getTrans())
                                         .set("modify_time", new Date())
                                         .set("modify_ts", System.currentTimeMillis());
-            if (stockParam.getTrans() == 0) {
-                update.set("status", 0);
-            }
             mongoTemplate.updateFirst(query, update, Stock.class);
         } else {
             stock = stockParam;
@@ -83,10 +80,8 @@ public class StockUpUpService {
             List<Holder> holders = mongoTemplate.findAll(Holder.class);
             List<HolderStock> data = new ArrayList<>(holders.size());
             holders.forEach(
-                    holder -> {
-                        HolderStock holderStock = transStocks(holder.getHolder_id(), holder.getHolder_name());
-                        data.add(holderStock);
-                    }
+                    holder -> { HolderStock holderStock = transStocks(holder.getHolder_id(), holder.getHolder_name());
+                                data.add(holderStock); }
             );
             result.put("data", data);
             result.put("rid", "");

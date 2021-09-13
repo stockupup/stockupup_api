@@ -34,9 +34,13 @@ public class StockUpUpController {
     @PostMapping("/update")
     public String update(@RequestBody Stock stockParam) {
         if (null == stockParam.getTrans() || null == stockParam.getCost()) {
-            return "update success";
+            return "update null";
         }
-        stockUpUpService.update(stockParam);
+        if (stockParam.getTrans() == 0) {
+            clearance(stockParam);
+        } else {
+            stockUpUpService.update(stockParam);
+        }
         return "update success";
     }
 
