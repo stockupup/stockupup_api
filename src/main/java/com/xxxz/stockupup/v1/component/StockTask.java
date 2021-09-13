@@ -88,7 +88,7 @@ public class StockTask {
         if (CollectionUtils.isNotEmpty(stocks_1)) {
             stocks_1.forEach(stock -> {
                 //TODO 待优化
-                if (stock.getProfit() > 0) {
+                if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
                     Update update = new Update()
                             .set("yesterday_profit", stock.getProfit())
@@ -102,7 +102,7 @@ public class StockTask {
         if (CollectionUtils.isNotEmpty(stocks_0)) {
             stocks_0.forEach(stock -> {
                 //TODO 待优化
-                if (stock.getProfit() > 0) {
+                if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
                     Update update = new Update()
                             .set("yesterday_profit", stock.getProfit())
