@@ -27,7 +27,7 @@ public final class DateUtil implements Serializable {
         try {
             ds = DateUtils.parseDate(s + " 00:00:00", "yyyy-MM-dd HH:mm:ss").getTime();
         } catch (ParseException e) {
-            log.error("-- 获取时间戳失败 --\n");
+            log.error("-- 获取时间戳失败 --");
             e.printStackTrace();
         }
         return ds;
@@ -44,7 +44,7 @@ public final class DateUtil implements Serializable {
         try {
             ds = DateUtils.parseDate(s + " 00:00:00", "yyyy-MM-dd HH:mm:ss").getTime();
         } catch (ParseException e) {
-            log.error("-- 获取时间戳失败 --\n");
+            log.error("-- 获取时间戳失败 --");
             e.printStackTrace();
         }
         return ds;

@@ -44,7 +44,7 @@ public class StockTask {
     @Scheduled(cron = "0 1 12,15,19,23 * * ?")
     public Map updateTodayProfit() {
         Map<String, String> result = new HashMap<>(4);
-        log.info("-- 更新今日收益 --\n");
+        log.info("-- 更新今日收益 --");
         List<Stock> stocks_1 = stockUpUpService.getStockByStatus(1);
         List<String> stockCodes = stocks_1.stream().map(Stock::getStock_code).collect(Collectors.toList());
         if (CollectionUtils.isNotEmpty(stockCodes)) {
@@ -83,14 +83,15 @@ public class StockTask {
      */
     @Scheduled(cron = "0 59 23 * * ?")
     public Map clearTodayProfit() {
-        log.info("-- 清零今日收益 --\n");
+        updateTodayProfit();
+        log.info("-- 清零今日收益 --");
         List<Stock> stocks_1 = stockUpUpService.getStockByStatus(1);
         if (CollectionUtils.isNotEmpty(stocks_1)) {
             stocks_1.forEach(stock -> {
                 //TODO 待优化
                 if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                    Update update = new Update().set("yesterday_profit", NumberUtil.retainTwo(stock.getTotal_profit()-stock.getProfit()))
+                    Update update = new Update().set("yesterday_profit", stock.getTotal_profit())
                                                 .set("profit", 0.00)
                                                 .set("yd_cost", stock.getCost());
                     mongoTemplate.updateFirst(query, update, Stock.class);
