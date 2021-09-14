@@ -134,8 +134,8 @@ public class StockUpUpService {
                                     + holder_stocks.stream().mapToDouble(Stock::getTotal_profit).sum()));
         //昨日收益 持仓股票的昨日收益 + 昨日清仓股票的收益 + 今日清仓股票的昨日收益
         holderStock.setYesterday_profit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getYesterday_profit).sum()
-                                        + stocks_0_y.stream().mapToDouble(Stock::getYesterday_profit).sum())
-                                        + stocks_0.stream().mapToDouble(Stock::getYesterday_profit).sum());
+                                        + stocks_0_y.stream().mapToDouble(Stock::getYesterday_profit).sum()
+                                        + stocks_0.stream().mapToDouble(Stock::getYesterday_profit).sum()));
         //今日收益 总收益 + 清仓收益 - 昨日持仓收益
         holderStock.setProfit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getTotal_profit).sum()
                                 + holderStock.getClearance_profit()
