@@ -10,8 +10,8 @@ spring:
   jackson:
     time-zone: GMT+8
 
-logging:
-  config: classpath:logging-spring.xml
+#logging:
+#  config: classpath:logging-spring.xml
 
 
 
