@@ -27,7 +27,7 @@ public class Stock implements Serializable {
 
     private Double clearance_profit = 0.00;     //清仓收益
     private Double total_profit = 0.00;         //总收益
-    private Double yesterday_profit = 0.00;     //昨日收益
+    private Double yesterday_profit = 0.00;     //昨日持仓总收益
     private Double profit = 0.00;                //今日收益
 
     private String currency = "CNY";             //币种
