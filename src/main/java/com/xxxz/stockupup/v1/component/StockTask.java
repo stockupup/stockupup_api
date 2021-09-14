@@ -90,7 +90,7 @@ public class StockTask {
                 //TODO 待优化
                 if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                    Update update = new Update().set("yesterday_profit", stock.getProfit())
+                    Update update = new Update().set("yesterday_profit", NumberUtil.retainTwo(stock.getTotal_profit()-stock.getProfit()))
                                                 .set("profit", 0.00)
                                                 .set("yd_cost", stock.getCost());
                     mongoTemplate.updateFirst(query, update, Stock.class);
@@ -103,7 +103,7 @@ public class StockTask {
                 //TODO 待优化
                 if (stock.getProfit() != 0) {
                     Query query = new Query(Criteria.where("_id").is(stock.get_id()));
-                    Update update = new Update().set("yesterday_profit", stock.getProfit())
+                    Update update = new Update().set("yesterday_profit", stock.getYesterday_profit())
                                                 .set("profit", 0.00);
                     mongoTemplate.updateFirst(query, update, Stock.class);
                 }
