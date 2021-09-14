@@ -115,11 +115,6 @@ public class StockUpUpService {
                                          .filter(stock -> stock.getStatus() == 0
                                                  && stock.getModify_ts() > DateUtil.getTodayTs())
                                          .collect(Collectors.toList());
-        List<Stock> stocks_0_y = holder_stocks.stream()
-                                           .filter(stock -> stock.getStatus() == 0
-                                                   && stock.getModify_ts() > DateUtil.getYesterdayTs()
-                                                   && stock.getModify_ts() < DateUtil.getTodayTs())
-                                           .collect(Collectors.toList());
         List<Stock> stocks_1 = holder_stocks.stream()
                                          .filter(stock -> stock.getStatus() == 1)
                                          .collect(Collectors.toList());
@@ -132,15 +127,13 @@ public class StockUpUpService {
         //总收益 ： 历史收益 + 所有买卖收益
         holderStock.setTotal_profit(NumberUtil.retainTwo(holder.getHistory_profit()
                                     + holder_stocks.stream().mapToDouble(Stock::getTotal_profit).sum()));
-        //昨日收益 持仓股票的昨日收益 + 昨日清仓股票的收益 + 今日清仓股票的昨日收益
+        //昨日收益 持仓股票的昨日收益
         holderStock.setYesterday_profit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getYesterday_profit).sum()
-                                        + stocks_0_y.stream().mapToDouble(Stock::getYesterday_profit).sum()
-                                        + stocks_0.stream().mapToDouble(Stock::getYesterday_profit).sum()));
+                                                                + stocks_0.stream().mapToDouble(Stock::getYesterday_profit).sum()));
         //今日收益 总收益 + 清仓收益 - 昨日持仓收益
         holderStock.setProfit(NumberUtil.retainTwo(stocks_1.stream().mapToDouble(Stock::getTotal_profit).sum()
                                 + holderStock.getClearance_profit()
-                                - stocks_1.stream().mapToDouble(Stock::getYesterday_profit).sum())
-                                - stocks_0.stream().mapToDouble(Stock::getYesterday_profit).sum());
+                                - holderStock.getYesterday_profit()));
         //由于前端将total_profit当作昨日累计收益使用，所以这样赋值
         holderStock.setTotal_profit(NumberUtil.retainTwo(holderStock.getTotal_profit() - holderStock.getProfit()));
         return holderStock;
