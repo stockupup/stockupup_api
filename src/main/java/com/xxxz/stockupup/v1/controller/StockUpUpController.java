@@ -83,9 +83,9 @@ public class StockUpUpController {
     @GetMapping("/task")
     public Object task(@RequestParam String type) {
         if (StringUtils.equals(type, "1")) {
-            return stockTask.updateTodayProfit();
+            stockTask.updateTodayProfit();
         } else if (StringUtils.equals(type, "2")) {
-            return stockTask.clearTodayProfit();
+            stockTask.clearTodayProfit();
         }
         return "success";
     }

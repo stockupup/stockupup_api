@@ -17,9 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -42,8 +40,7 @@ public class StockTask {
      * 每天12:01，15:01更新今日收益
      */
     @Scheduled(cron = "0 1 12,15,19,23 * * ?")
-    public Map updateTodayProfit() {
-        Map<String, String> result = new HashMap<>(4);
+    public void updateTodayProfit() {
         log.info("-- 更新今日收益 --");
         List<Stock> stocks_1 = stockUpUpService.getStockByStatus(1);
         List<String> stockCodes = stocks_1.stream().map(Stock::getStock_code).collect(Collectors.toList());
@@ -57,7 +54,7 @@ public class StockTask {
                                             .set("profit", NumberUtil.retainTwo(stock.getTotal_profit() + stock.getClearance_profit() - stock.getYesterday_profit()));
                 mongoTemplate.updateFirst(query, update, Stock.class);
             }
-            result.put("price", StringUtils.join(",", price));
+            stocks_1 = null; stockCodes = null; price = null;
         }
 
         //更新清仓收益
@@ -70,19 +67,15 @@ public class StockTask {
                         mongoTemplate.updateFirst(query, update, Stock.class);
                     }
             );
+            stocks_0 = null;
         }
-
-        result.put("stocks_1", StringUtils.join(",", stocks_1));
-        result.put("stockCodes", StringUtils.join(",", stockCodes));
-        result.put("stocks_0", StringUtils.join(",", stocks_0));
-        return result;
     }
 
     /**
      * 每天23.59清零今日收益
      */
     @Scheduled(cron = "0 59 23 * * ?")
-    public Map clearTodayProfit() {
+    public void clearTodayProfit() {
         updateTodayProfit();
         log.info("-- 清零今日收益 --");
         List<Stock> stocks_1 = stockUpUpService.getStockByStatus(1);
@@ -97,6 +90,7 @@ public class StockTask {
                     mongoTemplate.updateFirst(query, update, Stock.class);
                 }
             });
+            stocks_1 = null;
         }
         List<Stock> stocks_0 = stockUpUpService.getTodayClearStock();
         if (CollectionUtils.isNotEmpty(stocks_0)) {
@@ -109,12 +103,8 @@ public class StockTask {
                     mongoTemplate.updateFirst(query, update, Stock.class);
                 }
             });
+            stocks_0 = null;
         }
-
-        Map<String, String> result = new HashMap<>();
-        result.put("stocks_1", StringUtils.join(",", stocks_1));
-        result.put("stocks_0", StringUtils.join(",", stocks_0));
-        return result;
     }
 
     /**

@@ -80,17 +80,17 @@ public class StockUpUpService {
             List<Holder> holders = mongoTemplate.findAll(Holder.class);
             List<Stock> stocks = mongoTemplate.findAll(Stock.class);
             List<HolderStock> data = new ArrayList<>(holders.size());
-            holders.forEach(
-                    holder -> {
-                        List<Stock> holder_stocks = stocks.stream()
-                                                          .filter(stock -> StringUtils.equals(stock.getHolder_id(),holder.getHolder_id()))
-                                                          .collect(Collectors.toList());
-                        HolderStock holderStock = transStocks(holder,holder_stocks);
-                        data.add(holderStock); }
-            );
+            for(Holder holder : holders) {
+                 List<Stock> holder_stocks = stocks.stream().filter(stock -> StringUtils.equals(stock.getHolder_id(),holder.getHolder_id()))
+                                                            .collect(Collectors.toList());
+                 HolderStock holderStock = transStocks(holder,holder_stocks);
+                 data.add(holderStock);
+            }
             result.put("data", data);
             result.put("rid", "");
             result.put("total_count", data.size());
+
+            holders = null; stocks = null;
         } else {
             Holder holder = mongoTemplate.findOne(new Query(Criteria.where("holder_id").is(holder_id)),Holder.class);
             List<Stock> holder_stocks = mongoTemplate.findAll(Stock.class)
@@ -136,6 +136,8 @@ public class StockUpUpService {
                                 - holderStock.getYesterday_profit()));
         //由于前端将total_profit当作昨日累计收益使用，所以这样赋值
         holderStock.setTotal_profit(NumberUtil.retainTwo(holderStock.getTotal_profit() - holderStock.getProfit()));
+
+        stocks_0 = null;
         return holderStock;
     }
 
@@ -152,20 +154,7 @@ public class StockUpUpService {
      */
     public List<Stock> getTodayClearStock() {
         return mongoTemplate.find(new Query(Criteria.where("status").is(0)
-                                                .and("modify_ts").gt(DateUtil.getTodayTs())),
-                                    Stock.class);
-    }
-
-    /**
-     * 获取昨日清仓的股票（数据量上来之后在使用）
-     */
-    private List<Stock> getYesterdayClearStock(String holder_id) {
-        Criteria criteria = new Criteria();
-        criteria.andOperator(Criteria.where("holder_id").is(holder_id)
-                                     .and("status").is(0)
-                                     .and("modify_ts").gt(DateUtil.getYesterdayTs()),
-                            Criteria.where("modify_ts").lt(DateUtil.getTodayTs()));
-        return mongoTemplate.find(new Query(criteria),
+                                                        .and("modify_ts").gt(DateUtil.getTodayTs())),
                                     Stock.class);
     }
 }

@@ -19,6 +19,10 @@ public class HolderService {
     @Autowired
     MongoTemplate mongoTemplate;
 
+    public MongoTemplate getMongoTemplate() {
+        return mongoTemplate;
+    }
+
     /**
      * 添加用户
      */

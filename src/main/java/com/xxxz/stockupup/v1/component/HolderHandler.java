@@ -9,6 +9,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @autor jiangll
  * @date 2021/9/9
@@ -23,8 +26,13 @@ public class HolderHandler implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
         log.info("-- 初始化用户数据(无则添加) --");
+        List<String> holderNames = holderService.getMongoTemplate().findAll(Holder.class)
+                .stream().map(Holder::getHolder_name).collect(Collectors.toList());
         for (String holderName : StockContanst.HolderInitData) {
-            holderService.add(new Holder(holderName));
+            if (!holderNames.contains(holderName)) {
+                holderService.add(new Holder(holderName));
+            }
         }
+        holderNames = null;
     }
 }
