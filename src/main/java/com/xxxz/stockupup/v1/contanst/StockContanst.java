@@ -17,4 +17,9 @@ public final class StockContanst implements Serializable {
             "豆豆", "强哥", "志军", "鸡哥", "隆兄",
             "靖威", "正正", "猪哥", "涛哥", "老姜"
     };
+
+    /**
+     * 券商接口
+     */
+    public static String BrokerApiUrl = "https://hq.sinajs.cn/?list=";
 }
