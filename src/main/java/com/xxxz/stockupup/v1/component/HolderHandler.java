@@ -1,6 +1,6 @@
 package com.xxxz.stockupup.v1.component;
 
-import com.xxxz.stockupup.v1.contanst.StockContanst;
+import com.xxxz.stockupup.v1.contanst.StockConstant;
 import com.xxxz.stockupup.v1.model.Holder;
 import com.xxxz.stockupup.v1.service.HolderService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +28,7 @@ public class HolderHandler implements ApplicationRunner {
         log.info("-- 初始化用户数据(无则添加) --");
         List<String> holderNames = holderService.getMongoTemplate().findAll(Holder.class)
                 .stream().map(Holder::getHolder_name).collect(Collectors.toList());
-        for (String holderName : StockContanst.HolderInitData) {
+        for (String holderName : StockConstant.HolderInitData) {
             if (!holderNames.contains(holderName)) {
                 holderService.add(new Holder(holderName));
             }

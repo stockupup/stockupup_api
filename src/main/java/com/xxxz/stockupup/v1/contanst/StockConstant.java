@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @date 2021/9/9
  * 全局常量
  */
-public final class StockContanst implements Serializable {
+public final class StockConstant implements Serializable {
     private static final long serialVersionUID = 1285402108070629579L;
 
     /**

@@ -45,6 +45,13 @@ public class StockUpUpService {
             mongoTemplate.updateFirst(query, update, Stock.class);
         } else {
             stock = stockParam;
+            //校验股票代码
+            String stock_code = stock.getStock_code();
+            if(stock_code.substring(2, 3).equals("0") || stock_code.substring(2, 3).equals("3")){
+                stock.setStock_code("sz" + stock_code.substring(2));
+            }else if(stock_code.substring(2, 3).equals("6")){
+                stock.setStock_code("sh" + stock_code.substring(2));
+            }
             stock.set_id(UUID.randomUUID().toString().replaceAll("-", ""));
             stock.setCreate_time(new Date());
             stock.setCreate_ts(System.currentTimeMillis());

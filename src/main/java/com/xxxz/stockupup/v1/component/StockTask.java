@@ -1,6 +1,6 @@
 package com.xxxz.stockupup.v1.component;
 
-import com.xxxz.stockupup.v1.contanst.StockContanst;
+import com.xxxz.stockupup.v1.contanst.StockConstant;
 import com.xxxz.stockupup.v1.model.Stock;
 import com.xxxz.stockupup.v1.service.StockUpUpService;
 import com.xxxz.stockupup.v1.utils.NumberUtil;
@@ -113,7 +113,7 @@ public class StockTask {
      */
     private List<Double> getPresentPriceByCodes(List<String> codes) {
         List<Double> result = new ArrayList<>(codes.size());
-        String s1 = restTemplate.getForObject(StockContanst.BrokerApiUrl + StringUtils.join(codes, ","),
+        String s1 = restTemplate.getForObject(StockConstant.BrokerApiUrl + StringUtils.join(codes, ","),
                                                 String.class);
         String[] s2 = s1.split("\\n");
         for (String s2s : s2) {
